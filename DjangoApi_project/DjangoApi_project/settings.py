@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'graphene_django',
+    'graphapi.apps.GraphapiConfig',
     'rest_framework',
     'api.apps.ApiConfig',
     'users.apps.UsersConfig',

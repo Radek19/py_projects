@@ -23,8 +23,13 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from graphene_django.views import GraphQLView
+
+from .schema import schema
+
 urlpatterns = [
     path('', include('api.urls')),
+    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
     path('admin/', admin.site.urls),
 ]
 
@@ -35,4 +40,5 @@ urlpatterns += [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
