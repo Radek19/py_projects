@@ -10,7 +10,3 @@ products, orders or users.
 Api also provides search function.
 
 For authentication is used Simple JWT.
-
-Admin access
-username: admin
-password: adminpassword123
